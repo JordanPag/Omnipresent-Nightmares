@@ -3,6 +3,7 @@ var bedroom = [""];
 var office = [""];
 var classroom = [""];
 var points = 0;
+var currentRoom = "hospital";
 
 function AddFloor(room, x) {
   for (z=0;z<x;z++) {
@@ -26,6 +27,7 @@ function AddRoom(room) {
       num += 1;
     }
   }
+  currentRoom = room;
 } 
 
 function AddRow(room,blocks) {
