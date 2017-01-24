@@ -10,19 +10,24 @@ function displayunicode(y) {
 	var unicode = y.keyCode;
 	if (unicode == 37) {
 		//left arrow
-		var placenew = $("div#"+(place-1)).hasClass("floor");
-		if(placenew==true){
+		var placenew = $("div#"+(place-1)).attr("class");
+		if(placenew=="floor"){
 			placePlayer(place-1);
 		}
-		else{
-			placenew = $("div#"+(place-1)).hasClass("obj");
-			if(placenew==true){
-				placePlayer(place-1);
-				points += 1;
-				console.log(points);
-				if(points==5){
-					advance();
-				}
+		else if(placenew=="obj"){
+			placePlayer(place-1);
+			points += 1;
+			console.log(points);
+			if(points==5){
+				advance();
+			}
+		}
+		else if(placenew=="door-o"){
+			if(currentRoom=="office"){
+				AddRoom("classroom");
+			}
+			if(currentRoom=="hospital"){
+				AddRoom("bedroom");
 			}
 		}
 	}
