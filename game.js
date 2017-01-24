@@ -33,55 +33,70 @@ function displayunicode(y) {
 	}
 	if (unicode == 39) {
 		//right arrow
-		var placenew = $("div#"+(place+1)).hasClass("floor");
-		if(placenew==true){
+		var placenew = $("div#"+(place+1)).attr("class");
+		if(placenew=="floor"){
 			placePlayer(place+1);
 		}
-		else{
-			placenew = $("div#"+(place+1)).hasClass("obj");
-			if(placenew==true){
-				placePlayer(place+1);
-				points += 1;
-				console.log(points);
-				if(points==5){
-					advance();
-				}
+		else if(placenew=="obj"){
+			placePlayer(place+1);
+			points += 1;
+			console.log(points);
+			if(points==5){
+				advance();
+			}
+		}
+		else if(placenew=="door-o"){
+			if(currentRoom=="classroom"){
+				AddRoom("office");
+			}
+			if(currentRoom=="bedroom"){
+				AddRoom("hospital");
 			}
 		}
 	}
 	if (unicode == 38) {
 		//up arrow
-		var placenew = $("div#"+(place-32)).hasClass("floor");
-		if(placenew==true){
+		var placenew = $("div#"+(place-32)).attr("class");
+		if(placenew=="floor"){
 			placePlayer(place-32);
 		}
-		else{
-			placenew = $("div#"+(place-32)).hasClass("obj");
-			if(placenew==true){
-				placePlayer(place-32);
-				points += 1;
-				console.log(points);
-				if(points==5){
-					advance();
-				}
+		else if(placenew=="obj"){
+			placePlayer(place-32);
+			points += 1;
+			console.log(points);
+			if(points==5){
+				advance();
+			}
+		}
+		else if(placenew=="door-o"){
+			if(currentRoom=="bedroom"){
+				AddRoom("classroom");
+			}
+			if(currentRoom=="hospital"){
+				AddRoom("office");
 			}
 		}
 	}
 	if (unicode == 40) {
 		//down arrow
-		var placenew = $("div#"+(place+32)).hasClass("floor");
-		if(placenew==true){
+		var placenew = $("div#"+(place+32)).attr("class");
+		if(placenew=="floor"){
 			placePlayer(place+32);
 		}
-		else{
-			placenew = $("div#"+(place+32)).hasClass("obj");
-			if(placenew==true){
-				placePlayer(place+32);
-				points += 1;
-				console.log(points);
-				if(points==5){
-					advance();
-				}
+		else if(placenew=="obj"){
+			placePlayer(place+32);
+			points += 1;
+			console.log(points);
+			if(points==5){
+				advance();
+			}
+		}
+		else if(placenew=="door-o"){
+			if(currentRoom=="office"){
+				AddRoom("hospital");
+			}
+			if(currentRoom=="classroom"){
+				AddRoom("bedroom");
 			}
 		}
 	}
