@@ -29,6 +29,7 @@ function displayunicode(y) {
 			if(currentRoom=="hospital"){
 				AddRoom("bedroom");
 			}
+			placePlayer(place+30);
 		}
 	}
 	if (unicode == 39) {
