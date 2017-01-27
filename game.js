@@ -79,7 +79,7 @@ function displayunicode(y) {
 			if(currentRoom=="hospital"){
 				AddRoom("office");
 			}
-			place -= 960;
+			place += 960;
 			placePlayer(place);
 		}
 	}
@@ -104,7 +104,7 @@ function displayunicode(y) {
 			if(currentRoom=="classroom"){
 				AddRoom("bedroom");
 			}
-			place += 960;
+			place -= 960;
 			placePlayer(place);
 		}
 	}
