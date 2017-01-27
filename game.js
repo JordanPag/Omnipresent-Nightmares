@@ -53,6 +53,7 @@ function displayunicode(y) {
 			if(currentRoom=="bedroom"){
 				AddRoom("hospital");
 			}
+			placePlayer(place-30);
 		}
 	}
 	if (unicode == 38) {
@@ -76,6 +77,7 @@ function displayunicode(y) {
 			if(currentRoom=="hospital"){
 				AddRoom("office");
 			}
+			placePlayer(place-960);
 		}
 	}
 	if (unicode == 40) {
@@ -99,6 +101,7 @@ function displayunicode(y) {
 			if(currentRoom=="classroom"){
 				AddRoom("bedroom");
 			}
+			placePlayer(place+960);
 		}
 	}
 }
