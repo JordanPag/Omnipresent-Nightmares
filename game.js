@@ -29,7 +29,8 @@ function displayunicode(y) {
 			if(currentRoom=="hospital"){
 				AddRoom("bedroom");
 			}
-			placePlayer(place+30);
+			place += 30;
+			placePlayer(place);
 		}
 	}
 	if (unicode == 39) {
@@ -53,7 +54,8 @@ function displayunicode(y) {
 			if(currentRoom=="bedroom"){
 				AddRoom("hospital");
 			}
-			placePlayer(place-30);
+			place -= 30;
+			placePlayer(place);
 		}
 	}
 	if (unicode == 38) {
@@ -77,7 +79,8 @@ function displayunicode(y) {
 			if(currentRoom=="hospital"){
 				AddRoom("office");
 			}
-			placePlayer(place-960);
+			place -= 960;
+			placePlayer(place);
 		}
 	}
 	if (unicode == 40) {
@@ -101,7 +104,8 @@ function displayunicode(y) {
 			if(currentRoom=="classroom"){
 				AddRoom("bedroom");
 			}
-			placePlayer(place+960);
+			place += 960;
+			placePlayer(place);
 		}
 	}
 }
