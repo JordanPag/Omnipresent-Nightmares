@@ -30,6 +30,9 @@ function displayunicode(y) {
         AddRoom("bedroom");
       }
       place += 30;
+      if(currentRoom=="classroom"){
+        place += 1;
+      }
       placePlayer(place);
     }
   }
