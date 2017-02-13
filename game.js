@@ -31,7 +31,7 @@ function displayunicode(y) {
       }
       place += 30;
       if(currentRoom=="classroom"){
-        place += 1;
+        place -= 1;
       }
       placePlayer(place);
     }
