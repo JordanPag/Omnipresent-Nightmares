@@ -17,6 +17,7 @@ function displayunicode(y) {
     else if(placenew=="obj"){
       placePlayer(place-1);
       points += 1;
+      $("span#points").html(points);
       console.log(points);
       if(points==5){
         advance();
@@ -45,6 +46,7 @@ function displayunicode(y) {
     else if(placenew=="obj"){
       placePlayer(place+1);
       points += 1;
+      $("span#points").html(points);
       console.log(points);
       if(points==5){
         advance();
@@ -70,6 +72,7 @@ function displayunicode(y) {
     else if(placenew=="obj"){
       placePlayer(place-32);
       points += 1;
+      $("span#points").html(points);
       console.log(points);
       if(points==5){
         advance();
@@ -95,6 +98,7 @@ function displayunicode(y) {
     else if(placenew=="obj"){
       placePlayer(place+32);
       points += 1;
+      $("span#points").html(points);
       console.log(points);
       if(points==5){
         advance();
