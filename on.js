@@ -14,6 +14,7 @@ function AddFloor(room, x) {
 
 function AddRoom(room) {
   points = 0;
+  $("span#points").html(points);
   $("div.grid").html("");
   var num = 0;
   var rem = eval(room);
