@@ -60,6 +60,9 @@ function displayunicode(y) {
         AddRoom("hospital");
       }
       place -= 30;
+      if(currentRoom=="office"){
+        place += 1;
+      }
       placePlayer(place);
     }
   }
