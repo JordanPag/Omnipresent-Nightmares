@@ -91,3 +91,10 @@ body {
 	width: 6px;
 	display: table-cell;
 }
+
+.monster {
+	background: red;
+	height: 6px;
+	width: 6px;
+	display: table-cell;
+}
