@@ -1,5 +1,6 @@
 console.log("yay");
 var place = 300;
+var mPlace = 725;
 
 function advance(){
   console.log("advance");
@@ -126,5 +127,12 @@ function placePlayer(newplace) {
   place = newplace;
 }
 
+function placeMonster(newplace) {
+  $("div#"+mPlace).attr("class","floor");
+  $("div#"+newplace).attr("class","monster");
+  mPlace = newplace;
+}
+
 AddRoom("hospital");
 $("div#"+place).attr("class","player");
+$("div#"+mPlace).attr("class","monster");
