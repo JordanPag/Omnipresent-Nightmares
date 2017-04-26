@@ -27,16 +27,17 @@ function displayunicode(y) {
     else if(placenew=="door-o"){
       if(currentRoom=="office"){
         AddRoom("classroom");
+        mPlace = 972;
       }
       if(currentRoom=="hospital"){
         AddRoom("bedroom");
+        mPlace = 12;
       }
       place += 30;
       if(currentRoom=="classroom"){
         place -= 1;
       }
       placePlayer(place);
-      mPlace = 972;
       placeMonster(mPlace);
     }
   }
@@ -58,15 +59,18 @@ function displayunicode(y) {
     else if(placenew=="door-o"){
       if(currentRoom=="classroom"){
         AddRoom("office");
+        mPlace = 972
       }
       if(currentRoom=="bedroom"){
         AddRoom("hospital");
+        mPlace = 12
       }
       place -= 30;
       if(currentRoom=="office"){
         place += 1;
       }
       placePlayer(place);
+      placeMonster(mPlace);
     }
   }
   if (unicode == 38) {
@@ -87,12 +91,15 @@ function displayunicode(y) {
     else if(placenew=="door-o"){
       if(currentRoom=="bedroom"){
         AddRoom("classroom");
+        mPlace = 543;
       }
       if(currentRoom=="hospital"){
         AddRoom("office");
+        mPlace = 514;
       }
       place += 928;
       placePlayer(place);
+      placePlayer(mPlace);
     }
   }
   if (unicode == 40) {
@@ -113,12 +120,15 @@ function displayunicode(y) {
     else if(placenew=="door-o"){
       if(currentRoom=="office"){
         AddRoom("hospital");
+        mPlace = 543;
       }
       if(currentRoom=="classroom"){
         AddRoom("bedroom");
+        mPlace = 514;
       }
       place -= 928;
       placePlayer(place);
+      placePlayer(mPlace);
     }
   }
 }
