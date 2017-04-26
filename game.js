@@ -36,6 +36,8 @@ function displayunicode(y) {
         place -= 1;
       }
       placePlayer(place);
+      mPlace = 972;
+      placeMonster(mPlace);
     }
   }
   if (unicode == 39) {
