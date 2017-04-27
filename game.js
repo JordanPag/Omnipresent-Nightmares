@@ -120,11 +120,11 @@ function displayunicode(y) {
     else if(placenew=="door-o"){
       if(currentRoom=="office"){
         AddRoom("hospital");
-        mPlace = 543;
+        mPlace = 514;
       }
       if(currentRoom=="classroom"){
         AddRoom("bedroom");
-        mPlace = 514;
+        mPlace = 543;
       }
       place -= 928;
       placePlayer(place);
