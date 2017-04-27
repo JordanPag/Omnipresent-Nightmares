@@ -31,7 +31,7 @@ function displayunicode(y) {
       }
       if(currentRoom=="hospital"){
         AddRoom("bedroom");
-        mPlace = 36;
+        mPlace = 48;
       }
       place += 30;
       if(currentRoom=="classroom"){
@@ -63,7 +63,7 @@ function displayunicode(y) {
       }
       if(currentRoom=="bedroom"){
         AddRoom("hospital");
-        mPlace = 34;
+        mPlace = 44;
       }
       place -= 30;
       if(currentRoom=="office"){
