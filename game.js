@@ -27,7 +27,7 @@ function displayunicode(y) {
     else if(placenew=="door-o"){
       if(currentRoom=="office"){
         AddRoom("classroom");
-        mPlace = 972;
+        mPlace = 976;
       }
       if(currentRoom=="hospital"){
         AddRoom("bedroom");
