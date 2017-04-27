@@ -99,7 +99,7 @@ function displayunicode(y) {
       }
       place += 928;
       placePlayer(place);
-      placePlayer(mPlace);
+      placeMonster(mPlace);
     }
   }
   if (unicode == 40) {
@@ -128,7 +128,7 @@ function displayunicode(y) {
       }
       place -= 928;
       placePlayer(place);
-      placePlayer(mPlace);
+      placeMonster(mPlace);
     }
   }
 }
