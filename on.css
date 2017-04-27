@@ -11,7 +11,7 @@ body {
 
 .backdrop {
 	align-items: center;
-	background-color: white;
+	background-color: black;
 	display: flex;
 	display: -webkit-flex;
 	height: 220px;
