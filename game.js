@@ -42,6 +42,7 @@ function displayunicode(y) {
     }
     else if(placenew=="monster"){
       addRoom("lose");
+      $("font").html("<button onclick='location.reload()'>Play Again?</button>");
     }
   }
   if (unicode == 39) {
@@ -75,6 +76,10 @@ function displayunicode(y) {
       placePlayer(place);
       placeMonster(mPlace);
     }
+    else if(placenew=="monster"){
+      addRoom("lose");
+      $("font").html("<button onclick='location.reload()'>Play Again?</button>");
+    }
   }
   if (unicode == 38) {
     //up arrow
@@ -104,6 +109,10 @@ function displayunicode(y) {
       placePlayer(place);
       placeMonster(mPlace);
     }
+    else if(placenew=="monster"){
+      addRoom("lose");
+      $("font").html("<button onclick='location.reload()'>Play Again?</button>");
+    }
   }
   if (unicode == 40) {
     //down arrow
@@ -132,6 +141,10 @@ function displayunicode(y) {
       place -= 928;
       placePlayer(place);
       placeMonster(mPlace);
+    }
+    else if(placenew=="monster"){
+      addRoom("lose");
+      $("font").html("<button onclick='location.reload()'>Play Again?</button>");
     }
   }
 }
