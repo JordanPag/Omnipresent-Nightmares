@@ -99,3 +99,31 @@ body {
 	width: 6px;
 	display: table-cell;
 }
+
+.b {
+	background: #240f9d;
+	height: 6px;
+	width: 6px;
+	display: table-cell;
+}
+
+.m {
+	background: #4b0303;
+	height: 6px;
+	width: 6px;
+	display: table-cell;
+}
+
+.e {
+	background: #7e0202;
+	height: 6px;
+	width: 6px;
+	display: table-cell;
+}
+
+.p {
+	background: #d90505;
+	height: 6px;
+	width: 6px;
+	display: table-cell;
+}
