@@ -40,6 +40,9 @@ function displayunicode(y) {
       placePlayer(place);
       placeMonster(mPlace);
     }
+    else if(placenew=="monster"){
+      addRoom("lose");
+    }
   }
   if (unicode == 39) {
     //right arrow
