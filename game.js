@@ -41,7 +41,7 @@ function displayunicode(y) {
       placeMonster(mPlace);
     }
     else if(placenew=="monster"){
-      addRoom("lose");
+      AddRoom("lose");
       $("font").html("<button onclick='location.reload()'>Play Again?</button>");
     }
   }
@@ -77,7 +77,7 @@ function displayunicode(y) {
       placeMonster(mPlace);
     }
     else if(placenew=="monster"){
-      addRoom("lose");
+      AddRoom("lose");
       $("font").html("<button onclick='location.reload()'>Play Again?</button>");
     }
   }
@@ -110,7 +110,7 @@ function displayunicode(y) {
       placeMonster(mPlace);
     }
     else if(placenew=="monster"){
-      addRoom("lose");
+      AddRoom("lose");
       $("font").html("<button onclick='location.reload()'>Play Again?</button>");
     }
   }
@@ -143,7 +143,7 @@ function displayunicode(y) {
       placeMonster(mPlace);
     }
     else if(placenew=="monster"){
-      addRoom("lose");
+      AddRoom("lose");
       $("font").html("<button onclick='location.reload()'>Play Again?</button>");
     }
   }
