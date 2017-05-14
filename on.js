@@ -46,6 +46,7 @@ function AddRow(room,blocks) {
       rom.push(room+"wall");
     } else {
       rom.push(blocks[x]);
+    }
   }
   rom.push("rowend");
 }
