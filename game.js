@@ -8,143 +8,146 @@ function advance(){
 }
 
 function displayunicode(y) {
-  var unicode = y.keyCode;
-  if (unicode == 37) {
-    //left arrow
-    var placenew = $("div#"+(place-1)).attr("class");
-    if(placenew=="floor"){
-      placePlayer(place-1);
-    }
-    else if(placenew=="obj"){
-      placePlayer(place-1);
-      points += 1;
-      $("span#points").html(points);
-      console.log(points);
-      if(points==5){
-        advance();
+  if(currentRome=="lose"){
+  } else {
+    var unicode = y.keyCode;
+    if (unicode == 37) {
+      //left arrow
+      var placenew = $("div#"+(place-1)).attr("class");
+      if(placenew=="floor"){
+        placePlayer(place-1);
+      }
+      else if(placenew=="obj"){
+        placePlayer(place-1);
+        points += 1;
+        $("span#points").html(points);
+        console.log(points);
+        if(points==5){
+          advance();
+        }
+      }
+      else if(placenew=="door-o"){
+        if(currentRoom=="office"){
+          AddRoom("classroom");
+          mPlace = 976;
+        }
+        if(currentRoom=="hospital"){
+          AddRoom("bedroom");
+          mPlace = 48;
+        }
+        place += 30;
+        if(currentRoom=="classroom"){
+          place -= 1;
+        }
+        placePlayer(place);
+        placeMonster(mPlace);
+      }
+      else if(placenew=="monster"){
+        AddRoom("lose");
+        $("font").html("<button onclick='location.reload()'>Play Again?</button>");
       }
     }
-    else if(placenew=="door-o"){
-      if(currentRoom=="office"){
-        AddRoom("classroom");
-        mPlace = 976;
+    if (unicode == 39) {
+      //right arrow
+      var placenew = $("div#"+(place+1)).attr("class");
+      if(placenew=="floor"){
+        placePlayer(place+1);
       }
-      if(currentRoom=="hospital"){
-        AddRoom("bedroom");
-        mPlace = 48;
+      else if(placenew=="obj"){
+        placePlayer(place+1);
+        points += 1;
+        $("span#points").html(points);
+        console.log(points);
+        if(points==5){
+          advance();
+        }
       }
-      place += 30;
-      if(currentRoom=="classroom"){
-        place -= 1;
+      else if(placenew=="door-o"){
+        if(currentRoom=="classroom"){
+          AddRoom("office");
+          mPlace = 972;
+        }
+        if(currentRoom=="bedroom"){
+          AddRoom("hospital");
+          mPlace = 44;
+        }
+        place -= 30;
+        if(currentRoom=="office"){
+          place += 1;
+        }
+        placePlayer(place);
+        placeMonster(mPlace);
       }
-      placePlayer(place);
-      placeMonster(mPlace);
-    }
-    else if(placenew=="monster"){
-      AddRoom("lose");
-      $("font").html("<button onclick='location.reload()'>Play Again?</button>");
-    }
-  }
-  if (unicode == 39) {
-    //right arrow
-    var placenew = $("div#"+(place+1)).attr("class");
-    if(placenew=="floor"){
-      placePlayer(place+1);
-    }
-    else if(placenew=="obj"){
-      placePlayer(place+1);
-      points += 1;
-      $("span#points").html(points);
-      console.log(points);
-      if(points==5){
-        advance();
-      }
-    }
-    else if(placenew=="door-o"){
-      if(currentRoom=="classroom"){
-        AddRoom("office");
-        mPlace = 972;
-      }
-      if(currentRoom=="bedroom"){
-        AddRoom("hospital");
-        mPlace = 44;
-      }
-      place -= 30;
-      if(currentRoom=="office"){
-        place += 1;
-      }
-      placePlayer(place);
-      placeMonster(mPlace);
-    }
-    else if(placenew=="monster"){
-      AddRoom("lose");
-      $("font").html("<button onclick='location.reload()'>Play Again?</button>");
-    }
-  }
-  if (unicode == 38) {
-    //up arrow
-    var placenew = $("div#"+(place-32)).attr("class");
-    if(placenew=="floor"){
-      placePlayer(place-32);
-    }
-    else if(placenew=="obj"){
-      placePlayer(place-32);
-      points += 1;
-      $("span#points").html(points);
-      console.log(points);
-      if(points==5){
-        advance();
+      else if(placenew=="monster"){
+        AddRoom("lose");
+        $("font").html("<button onclick='location.reload()'>Play Again?</button>");
       }
     }
-    else if(placenew=="door-o"){
-      if(currentRoom=="bedroom"){
-        AddRoom("classroom");
-        mPlace = 543;
+    if (unicode == 38) {
+      //up arrow
+      var placenew = $("div#"+(place-32)).attr("class");
+      if(placenew=="floor"){
+        placePlayer(place-32);
       }
-      if(currentRoom=="hospital"){
-        AddRoom("office");
-        mPlace = 514;
+      else if(placenew=="obj"){
+        placePlayer(place-32);
+        points += 1;
+        $("span#points").html(points);
+        console.log(points);
+        if(points==5){
+          advance();
+        }
       }
-      place += 928;
-      placePlayer(place);
-      placeMonster(mPlace);
-    }
-    else if(placenew=="monster"){
-      AddRoom("lose");
-      $("font").html("<button onclick='location.reload()'>Play Again?</button>");
-    }
-  }
-  if (unicode == 40) {
-    //down arrow
-    var placenew = $("div#"+(place+32)).attr("class");
-    if(placenew=="floor"){
-      placePlayer(place+32);
-    }
-    else if(placenew=="obj"){
-      placePlayer(place+32);
-      points += 1;
-      $("span#points").html(points);
-      console.log(points);
-      if(points==5){
-        advance();
+      else if(placenew=="door-o"){
+        if(currentRoom=="bedroom"){
+          AddRoom("classroom");
+          mPlace = 543;
+        }
+        if(currentRoom=="hospital"){
+          AddRoom("office");
+          mPlace = 514;
+        }
+        place += 928;
+        placePlayer(place);
+        placeMonster(mPlace);
+      }
+      else if(placenew=="monster"){
+        AddRoom("lose");
+        $("font").html("<button onclick='location.reload()'>Play Again?</button>");
       }
     }
-    else if(placenew=="door-o"){
-      if(currentRoom=="office"){
-        AddRoom("hospital");
-        mPlace = 514;
+    if (unicode == 40) {
+      //down arrow
+      var placenew = $("div#"+(place+32)).attr("class");
+      if(placenew=="floor"){
+        placePlayer(place+32);
       }
-      if(currentRoom=="classroom"){
-        AddRoom("bedroom");
-        mPlace = 543;
+      else if(placenew=="obj"){
+        placePlayer(place+32);
+        points += 1;
+        $("span#points").html(points);
+        console.log(points);
+        if(points==5){
+          advance();
+        }
       }
-      place -= 928;
-      placePlayer(place);
-      placeMonster(mPlace);
-    }
-    else if(placenew=="monster"){
-      AddRoom("lose");
-      $("font").html("<button onclick='location.reload()'>Play Again?</button>");
+      else if(placenew=="door-o"){
+        if(currentRoom=="office"){
+          AddRoom("hospital");
+          mPlace = 514;
+        }
+        if(currentRoom=="classroom"){
+          AddRoom("bedroom");
+          mPlace = 543;
+        }
+        place -= 928;
+        placePlayer(place);
+        placeMonster(mPlace);
+      }
+      else if(placenew=="monster"){
+        AddRoom("lose");
+        $("font").html("<button onclick='location.reload()'>Play Again?</button>");
+      }
     }
   }
 }
