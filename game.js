@@ -8,7 +8,7 @@ function advance(){
 }
 
 function displayunicode(y) {
-  if(currentRome=="lose"){
+  if(currentRoom=="lose"){
   } else {
     var unicode = y.keyCode;
     if (unicode == 37) {
