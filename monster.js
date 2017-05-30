@@ -18,8 +18,11 @@ function move() {
   }
 }
 
-var x = 1;
-while(x=x){
-  move();
-  sleep(250);
+window.onload = function(){
+  var x = 1;
+  while(x=x){
+    move();
+    sleep(250);
+  }
 }
+
