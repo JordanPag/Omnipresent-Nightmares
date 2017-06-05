@@ -24,7 +24,7 @@ function move() {
 }
 
 window.onload = function(){
-  for(var i=0; i<960; i++;){
+  for(var i=0; i<960; i++){
     var yDistRaw = Math.floor(place/32) - Math.floor(mPlace/32);
     var xDistRaw = place%32 - mPlace%32;
     var yDist = Math.abs(yDistRaw);
