@@ -30,11 +30,11 @@ window.onload = function(){
     var yDist = Math.abs(yDistRaw);
     var xDist = Math.abs(xDistRaw);
     move();
-    sleep(250);
     if(touching == true){
       AddRoom("lose");
       break;
     }
+    sleep(250);
   }
 }
 
