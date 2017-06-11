@@ -29,3 +29,5 @@ function move() {
     move();
   }, 250);
 }
+
+move();
