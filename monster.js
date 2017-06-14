@@ -8,6 +8,9 @@ function check() {
   if(yDist>=xDist){
     console.log("up/down");
   }
+  else {
+    console.log("left/right");
+  }
   
   if(mPlace == place){
     touching = true
