@@ -23,7 +23,7 @@ function move() {
   check();
   if(touching == true){
     AddRoom("lose");
-    break;
+    return;
   }
   setTimeout(function(){
     move();
