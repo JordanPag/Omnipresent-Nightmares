@@ -3,6 +3,7 @@ var xDistRaw = place%32 - mPlace%32;
 var yDist = Math.abs(yDistRaw);
 var xDist = Math.abs(xDistRaw);
 var touching = false;
+var lastmPlace = 725;
 
 function direc() {
   var yDistRaw = Math.floor(place/32) - Math.floor(mPlace/32);
@@ -25,9 +26,9 @@ function direc() {
 function check(id){
   var yesorno = document.getElementById(id).className;
   if(yesorno=="floor"||yesorno=="player"){
-    yesorno = true;
+    return(true);
   } else {
-    yesorno = false;
+    return(false);
   }
 }
 
@@ -42,7 +43,27 @@ function move() {
     return;
   }
   if(direction=="up/down"){
-    if
+    if(yDistRaw>=0){
+      //going down
+      if(down==true){
+        //move
+        if(lastmPlace==mPlace+32){
+        } else {
+          placeMonster(mPlace+32);
+        }
+      }
+    } else {
+      //going up
+      if(up==true){
+        //move
+        placeMonster(mPlace-32);
+      }
+    }
+  }
+  direction = direc();
+  if(touching == true){
+    AddRoom("lose");
+    return;
   }
   setTimeout(function(){
     move();
