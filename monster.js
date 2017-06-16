@@ -34,7 +34,7 @@ function check(id){
   }
 }
 
-function decide(){
+function decide(direction){
   if(direction=="up/down"){
     if(yDistRaw>=0){
       //going down
@@ -140,7 +140,7 @@ function move() {
     AddRoom("lose");
     return;
   }
-  decide();
+  decide(direction);
   direction = direc();
   if(touching == true){
     AddRoom("lose");
