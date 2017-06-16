@@ -34,6 +34,27 @@ function check(id){
   }
 }
 
+function move() {
+  var direction = direc();
+  var up = check(mPlace-32);
+  var down = check(mPlace+32);
+  var right = check(mPlace+1);
+  var left = check(mPlace-1);
+  if(touching == true){
+    AddRoom("lose");
+    return;
+  }
+  decide(direction);
+  direction = direc();
+  if(touching == true){
+    AddRoom("lose");
+    return;
+  }
+  setTimeout(function(){
+    move();
+  }, 250);
+}
+
 function decide(direction){
   if(direction=="up/down"){
     if(yDistRaw>=0){
@@ -128,27 +149,6 @@ function decide(direction){
       }
     }
   }
-}
-
-function move() {
-  var direction = direc();
-  var up = check(mPlace-32);
-  var down = check(mPlace+32);
-  var right = check(mPlace+1);
-  var left = check(mPlace-1);
-  if(touching == true){
-    AddRoom("lose");
-    return;
-  }
-  decide(direction);
-  direction = direc();
-  if(touching == true){
-    AddRoom("lose");
-    return;
-  }
-  setTimeout(function(){
-    move();
-  }, 250);
 }
 
 move();
