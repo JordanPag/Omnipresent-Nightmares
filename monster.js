@@ -6,10 +6,10 @@ var touching = false;
 var lastmPlace = 725;
 
 function direc() {
-  var yDistRaw = Math.floor(place/32) - Math.floor(mPlace/32);
-  var xDistRaw = place%32 - mPlace%32;
-  var yDist = Math.abs(yDistRaw);
-  var xDist = Math.abs(xDistRaw);
+  yDistRaw = Math.floor(place/32) - Math.floor(mPlace/32);
+  xDistRaw = place%32 - mPlace%32;
+  yDist = Math.abs(yDistRaw);
+  xDist = Math.abs(xDistRaw);
   if(mPlace == place){
     touching = true
   }
@@ -56,6 +56,10 @@ function move() {
 }
 
 function decide(direction,up,down,left,right){
+  yDistRaw = Math.floor(place/32) - Math.floor(mPlace/32);
+  xDistRaw = place%32 - mPlace%32;
+  yDist = Math.abs(yDistRaw);
+  xDist = Math.abs(xDistRaw);
   if(direction=="up/down"){
     if(yDistRaw>=0){
       //going down
