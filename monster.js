@@ -93,6 +93,28 @@ function decide(direction,up,down,left,right){
       if(up==true){
         //move
         placeMonster(mPlace-32);
+      } else if(xDistRaw>=0){
+        //going right
+        if(right==true){
+          placeMonster(mPlace+1);
+        } else if(down==true){
+          placeMonster(mPlace+32);
+        } else if(left==true){
+          placeMonster(mPlace-1);
+        } else {
+          placeMonster(lastmPlace);
+        }
+      } else {
+        //going left
+        if(left==true){
+          placeMonster(mPlace-1);
+        } else if(down==true){
+          placeMonster(mPlace+32);
+        } else if(right==true){
+          placeMonster(mPlace+1);
+        } else {
+          placeMonster(lastmPlace);
+        }
       }
     }
   } else if(direction=="left/right"){
