@@ -161,6 +161,7 @@ function placePlayer(newplace) {
 function placeMonster(newplace) {
   $("div#"+mPlace).attr("class","floor");
   $("div#"+newplace).attr("class","monster");
+  lastmPlace = mPlace;
   mPlace = newplace;
 }
 
