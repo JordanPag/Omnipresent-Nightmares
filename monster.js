@@ -26,9 +26,109 @@ function direc() {
 function check(id){
   var yesorno = document.getElementById(id).className;
   if(yesorno=="floor"||yesorno=="player"){
-    return(true);
+    if(id==lastmPlace){
+      return(false);
+    } else {
+      return(true);
+    }
   } else {
     return(false);
+  }
+}
+
+function decide(){
+  if(direction=="up/down"){
+    if(yDistRaw>=0){
+      //going down
+      if(down==true){
+        placeMonster(mPlace+32);
+      } else if(xDistRaw>=0){
+        //going right
+        if(right==true){
+          placeMonster(mPlace+1);
+        } else if(up==true){
+          placeMonster(mPlace-32);
+        } else if(left==true){
+          placeMonster(mPlace-1);
+        } else {
+          placeMonster(lastmPlace);
+        }
+      } else {
+        //going left
+        if(left==true){
+          placeMonster(mPlace-1);
+        } else if(up==true){
+          placeMonster(mPlace-32);
+        } else if(right==true){
+          placeMonster(mPlace+1);
+        } else {
+          placeMonster(lastmPlace);
+        }
+      }
+    } else {
+      //going up
+      if(up==true){
+        //move
+        placeMonster(mPlace-32);
+      }
+    }
+  } else if(direction=="left/right"){
+    if(xDistRaw>=0){
+      //going right
+      if(right==true){
+        placeMonster(mPlace+1);
+      } else if(yDistRaw>=0){
+        //going down
+        if(down==true){
+          placeMonster(mPlace+32);
+        } else if(left==true){
+          placeMonster(mPlace-1);
+        } else if(up==true){
+          placeMonster(mPlace-32);
+        } else {
+          placeMonster(lastmPlace);
+        }
+      } else {
+        //going up
+        if(up==true){
+          placeMonster(mPlace-32);
+        } else if(left==true){
+          placeMonster(mPlace-1);
+        } else if(down==true){
+          placeMonster(mPlace+32);
+        } else {
+          placeMonster(lastmPlace);
+        }
+      }
+    } else {
+      //going left
+      if(left==true){
+        //move
+        placeMonster(mPlace-1);
+      } else if(yDistRaw>=0){
+        //going down
+        if(down==true){
+          placeMonster(mPlace+32);
+        } else if(right==true){
+          placeMonster(mPlace+1);
+        } else if(up==true){
+          placeMonster(mPlace-32);
+        } else {
+          placeMonster(lastmPlace);
+        }
+      } else {
+        //going up
+        if(up==true){
+          placeMonster(mPlace-32);
+        } else if(right==true){
+          placeMonster(mPlace+1);
+        } else if(down==true){
+          placeMonster(mPlace+32);
+        } else {
+          placeMonster(lastmPlace);
+        }
+      }
+    }
   }
 }
 
@@ -42,24 +142,7 @@ function move() {
     AddRoom("lose");
     return;
   }
-  if(direction=="up/down"){
-    if(yDistRaw>=0){
-      //going down
-      if(down==true){
-        //move
-        if(lastmPlace==mPlace+32){
-        } else {
-          placeMonster(mPlace+32);
-        }
-      }
-    } else {
-      //going up
-      if(up==true){
-        //move
-        placeMonster(mPlace-32);
-      }
-    }
-  }
+  decide();
   direction = direc();
   if(touching == true){
     AddRoom("lose");
