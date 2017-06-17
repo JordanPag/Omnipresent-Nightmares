@@ -42,12 +42,14 @@ function move() {
   var left = check(mPlace-1);
   if(touching == true){
     AddRoom("lose");
+    $("font").html("<button onclick='location.reload()'>Play Again?</button>");
     return;
   }
   decide(direction,up,down,left,right);
   direction = direc();
   if(touching == true){
     AddRoom("lose");
+    $("font").html("<button onclick='location.reload()'>Play Again?</button>");
     return;
   }
   setTimeout(function(){
@@ -93,14 +95,14 @@ function decide(direction,up,down,left,right){
       if(up==true){
         //move
         placeMonster(mPlace-32);
-      } else if(xDistRaw>=0){
+      } else if(xDistRaw>0){
         //going right
         if(right==true){
           placeMonster(mPlace+1);
-        } else if(down==true){
-          placeMonster(mPlace+32);
         } else if(left==true){
           placeMonster(mPlace-1);
+        } else if(down==true){
+          placeMonster(mPlace+32);
         } else {
           placeMonster(lastmPlace);
         }
@@ -108,10 +110,10 @@ function decide(direction,up,down,left,right){
         //going left
         if(left==true){
           placeMonster(mPlace-1);
-        } else if(down==true){
-          placeMonster(mPlace+32);
         } else if(right==true){
           placeMonster(mPlace+1);
+        } else if(down==true){
+          placeMonster(mPlace+32);
         } else {
           placeMonster(lastmPlace);
         }
