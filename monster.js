@@ -71,10 +71,10 @@ function decide(direction,up,down,left,right){
         //going right
         if(right==true){
           placeMonster(mPlace+1);
-        } else if(up==true){
-          placeMonster(mPlace-32);
         } else if(left==true){
           placeMonster(mPlace-1);
+        } else if(up==true){
+          placeMonster(mPlace-32);
         } else {
           placeMonster(lastmPlace);
         }
@@ -82,10 +82,10 @@ function decide(direction,up,down,left,right){
         //going left
         if(left==true){
           placeMonster(mPlace-1);
-        } else if(up==true){
-          placeMonster(mPlace-32);
         } else if(right==true){
           placeMonster(mPlace+1);
+        } else if(up==true){
+          placeMonster(mPlace-32);
         } else {
           placeMonster(lastmPlace);
         }
@@ -128,10 +128,10 @@ function decide(direction,up,down,left,right){
         //going down
         if(down==true){
           placeMonster(mPlace+32);
-        } else if(left==true){
-          placeMonster(mPlace-1);
         } else if(up==true){
           placeMonster(mPlace-32);
+        } else if(left==true){
+          placeMonster(mPlace-1);
         } else {
           placeMonster(lastmPlace);
         }
@@ -139,10 +139,10 @@ function decide(direction,up,down,left,right){
         //going up
         if(up==true){
           placeMonster(mPlace-32);
-        } else if(left==true){
-          placeMonster(mPlace-1);
         } else if(down==true){
           placeMonster(mPlace+32);
+        } else if(left==true){
+          placeMonster(mPlace-1);
         } else {
           placeMonster(lastmPlace);
         }
@@ -156,10 +156,10 @@ function decide(direction,up,down,left,right){
         //going down
         if(down==true){
           placeMonster(mPlace+32);
-        } else if(right==true){
-          placeMonster(mPlace+1);
         } else if(up==true){
           placeMonster(mPlace-32);
+        } else if(right==true){
+          placeMonster(mPlace+1);
         } else {
           placeMonster(lastmPlace);
         }
@@ -167,10 +167,10 @@ function decide(direction,up,down,left,right){
         //going up
         if(up==true){
           placeMonster(mPlace-32);
-        } else if(right==true){
-          placeMonster(mPlace+1);
         } else if(down==true){
           placeMonster(mPlace+32);
+        } else if(right==true){
+          placeMonster(mPlace+1);
         } else {
           placeMonster(lastmPlace);
         }
