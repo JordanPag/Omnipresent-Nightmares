@@ -8,6 +8,7 @@ var counter = 0;
 var timeleft = 240;
 
 function win(){
+  console.log("win");
 }
 
 function direc() {
