@@ -127,3 +127,7 @@ body {
 	width: 6px;
 	display: table-cell;
 }
+
+span {
+	color: white;
+}
