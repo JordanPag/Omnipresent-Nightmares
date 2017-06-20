@@ -63,7 +63,7 @@ function move() {
         seconds = "0" + seconds;
       }
       var textline = Math.floor(timeleft/60) + ":" + seconds;
-      $("span#time").html(
+      $("span#time").html(textline);
     }
     move();
   }, 250);
