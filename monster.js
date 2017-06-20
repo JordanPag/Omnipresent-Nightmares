@@ -7,6 +7,9 @@ var lastmPlace = 725;
 var counter = 0;
 var timeleft = 240;
 
+function win(){
+}
+
 function direc() {
   yDistRaw = Math.floor(place/32) - Math.floor(mPlace/32);
   xDistRaw = place%32 - mPlace%32;
@@ -64,6 +67,10 @@ function move() {
       }
       var textline = Math.floor(timeleft/60) + ":" + seconds;
       $("span#time").html(textline);
+    }
+    if(timeleft==0){
+      win();
+      return;
     }
     move();
   }, 250);
