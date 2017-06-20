@@ -4,6 +4,8 @@ var yDist = Math.abs(yDistRaw);
 var xDist = Math.abs(xDistRaw);
 var touching = false;
 var lastmPlace = 725;
+var counter = 0;
+var timeleft = 240;
 
 function direc() {
   yDistRaw = Math.floor(place/32) - Math.floor(mPlace/32);
@@ -53,6 +55,16 @@ function move() {
     return;
   }
   setTimeout(function(){
+    counter += 1;
+    if(counter%4==0){
+      timeleft -= 1;
+      var seconds = timeleft%60;
+      if(seconds<10){
+        seconds = "0" + seconds;
+      }
+      var textline = Math.floor(timeleft/60) + ":" + seconds;
+      $("span#time").html(
+    }
     move();
   }, 250);
 }
