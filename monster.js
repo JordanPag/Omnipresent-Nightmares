@@ -9,6 +9,8 @@ var timeleft = 240;
 
 function win(){
   console.log("win");
+  currentRoom = "lose";
+  alert("A winner is you!");
 }
 
 function direc() {
